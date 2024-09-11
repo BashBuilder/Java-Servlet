@@ -13,14 +13,11 @@ import jakarta.servlet.http.HttpSession;
 @WebServlet("/square")
 public class SquareServlet extends HttpServlet {
 	public void doGet(HttpServletRequest req, HttpServletResponse res) throws IOException {
-		
 //		int num = Integer.parseInt(req.getParameter("num"));
-
 		HttpSession session = req.getSession();
 		int num = (int) session.getAttribute("num");
 		
 		int result = num * num;
-		
 		PrintWriter outPrintWriter = res.getWriter();
 		outPrintWriter.println("The result is " + result);
 		
