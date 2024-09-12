@@ -6,15 +6,17 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
-<body style={{ color: "red" }} >
-	<%
-		int num1 = Integer.parseInt(request.getParameter("num1"));
-		int num2 = Integer.parseInt(request.getParameter("num2"));
-		
-		int result = num1 + num2;
-		
-		out.print(result);
-	
+<body >
+	<%! 
+		int num1 = 0;
+		int num2 = 1;
+		int result = 20;
 	%>
+	<%
+		num1 = Integer.parseInt(request.getParameter("num1"));
+		num2 = Integer.parseInt(request.getParameter("num2"));	
+		result = num1 + num2;
+	%>
+	<%= result %>
 </body>
 </html>
